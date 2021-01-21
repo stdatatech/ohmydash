@@ -1,0 +1,25 @@
+* [介绍](/)
+* [Docker体验](docker)
+* 数据源
+  * [CSV](csv)
+  * [JDBC](jdbc)
+  * [SQLite](sqlite)
+  * [REST-API](rest-api)
+* 图表
+  * [查询](query)
+  * [可视化](visualization)
+  * [参数](parameter)
+  * [格式化](format)
+  * [导入/导出](imexport)
+* 监控面板
+  * [显示模式](dash-mode)
+  * [外观](dash-appearance)
+  * [自动刷新](dash-autorefresh)
+* [报表](report)
+* 集成和分享
+  * [链接](link)
+  * [发送](send)
+* 设置
+  * [通知](notification.md)
+* 系统
+  * [许可证](license)
