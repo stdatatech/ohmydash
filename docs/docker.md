@@ -2,55 +2,21 @@ OhMyDash支持docker方式安装。使用OhMyDash的docker Image您可以快速�
 
 #### 前置条件
 * 您已经安装了docker在您的电脑上，并正确配置。
-* 你拥有一个docker hub的账号，并获得我们的授权。
 
-#### 开始使用
+#### 申请免费的License
 
-* 第一次使用在*nix上使用
+在开始之前，你需要登录我们的网站 https://ohmydash.stdatatech.com/freeLicense 申请免费的License。 license会通过邮件发送给您的邮箱。点击邮件中的链接可以下载license文件。
 
-我们只用了Docker的Volume映射来保存用户数据到本地磁盘。例如下面的例子中我们使用本地的/tmp/ohmydash来保存用户数据。这样做的目的是您以后使用新版本的OhMyDash的docker image的时候，仍然可以加载原来的数据。
+#### 启动程序
 
 ```shell
-docker run -d -p 3000:3000 -v /tmp/ohmydash:/opt/ohmydash/u-data stdatatech/ohmydash /opt/ohmydash/bin/start.sh
+docker run -d -p 3000:3000 stdatatech/ohmydash-lite
 ```
-
 上面的命令运行成功之后，您可以通过 http://localhost:3000 来访问OhMyDash。 默认的用户名和密码为admin/admin.
-Docker版本的OhMyDash提供一个功能有限的Free License。您可以和我们获得联系来获得功能更多的License。
 
-* 停止OhMyDash
+#### 导入License
 
-您可以通过如下命令来停止OhMyDash
-
-```shell
-docker stop <your container ID>
-```
-您可以通过如下命令获得container ID
-
-```shell
-docker container ls | grep stdatatech/ohmydash
-```
-
-* 重新启动OhMyDash
-  
-您可以通过运行如下命令启动
-
-```shell
-docker start <container ID>
-```
-  您可以通过如下命令获得container ID
-
-```shell
-docker container ls --all | grep stdatatech/ohmydash
-```
-
-* 升级OhMydash
-
-如同第一次运行一样，使用如下命令启动最新的容器:
-
-```shell
-docker run -d -p 3000:3000 -p 8080:8080 -v /tmp/ohmydash:/opt/ohmydash/u-data stdatatech/ohmydash /opt/ohmydash/bin/start.sh <your ipaddress> 8080 
-```
-您需要更新你的license文件，请和我们获得联系来获取您的新的license文件。
+登录OhMyDash之后,进入页面http://localhost:3000/system_status 选择License Tab,你可以点击”升级许可证“按钮来导入刚刚下载好的license文件。导入License成功之后，您就可以开始使用OhMyDash了。
 
 #### 使用测试数据
 

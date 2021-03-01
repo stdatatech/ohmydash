@@ -2,50 +2,21 @@ OhMyDash support installation base on docker image. User can experience all OhMy
 
 #### Prerequisite
 * Docker Engine has installed and configured.
-* User has docker hub account and has granted access to image.
-* User login into docker hub.
 
-#### Getting Started
+#### Apply Free License
 
-* First usage on *nix
+在开始之前，你需要登录我们的网站 https://ohmydash.stdatatech.com/freeLicense 申请免费的License。 license会通过邮件发送给您的邮箱。点击邮件中的链接可以下载license文件。
 
-OhMyDash container can use mounted volume to store user data into local disk, such as system settings, user preference, chart definition, dashboar definition, etc. These data will not lost when user try to launch new OhMyDash container with new image.<br>
-
-The following sample shows how to use local /tmp/ohmydash to keep user data.
-```shell
-docker run -d -p 3000:3000 -v /tmp/ohmydash:/opt/ohmydash/u-data stdatatech/ohmydash /opt/ohmydash/bin/start.sh
-```
-
-When above docker command executed successfully, user can OhMyDash start page by accessing to http://localhost:3000 via any WebBrowser. Default user password is admin/admin. <br>
-
-A Free License is shipped when running OhMyDash in docker with limited features. You can contact us to acquire a full-feature license.
-
-* List running OhMyDash containers
+#### Start OhMyDash
 
 ```shell
-docker container ls | grep stdatatech/ohmydash
+docker run -d -p 3000:3000 stdatatech/ohmydash-lite
 ```
-```shell
-docker container ls --all | grep stdatatech/ohmydash
-```
+When above command run successfully, you can access OhMyDash by http://localhost:3000.  The default username/password is admin/admin.
 
-* Stop OhMyDash
+#### Import License
 
-```shell
-docker stop <your container ID>
-```
-
-* Restart OhMyDash
- 
-```shell
-docker start <container ID>
-```
-
-* Upgrade OhMydash
-
-```shell
-docker run -d -p 3000:3000 -p 8080:8080 -v /tmp/ohmydash:/opt/ohmydash/u-data stdatatech/ohmydash /opt/ohmydash/bin/start.sh <your ipaddress> 8080 
-```
+After login ,go to page http://localhost:3000/system_status and select License Tab, you can click ”Upgrade license“ button to import the license file you just applied. 
 
 #### Use Sample Data
 

@@ -5,5 +5,3 @@ services:
     image: stdatatech/ohmydash
     ports: 
       - 3000:3000
-    environment: 
-      LICENSE_SERVER_URL: http://ohmydash.stdatatech.com:8060/api/v1/clients
